@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-19 00:16:34
- * @LastEditTime: 2021-08-19 01:32:25
+ * @LastEditTime: 2021-08-19 01:40:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Editude
  * @FilePath: /RayTracing/sphere.h
@@ -37,7 +37,7 @@ class Sphere : public Object {
     if (s < 0 && l2 > radius2_) {
       return false;
     }
-    floatm m2 = l2 - s * s;  // 球心与射线的垂直距离
+    float m2 = l2 - s * s;  // 球心与射线的垂直距离
     if (m2 > radius2_) {
       return false;
     }
@@ -55,5 +55,5 @@ class Sphere : public Object {
    * @param {const} Vector3f 球面某点
    * @return {*} 返回球面法向量
    */
-  virtual Vector3f GetNormal(const Vector3f& p) { return normalize(p - center_); }
+  virtual Vector3f GetNormal(const Vector3f& p) override { return normalize(p - center_); }
 };

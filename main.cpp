@@ -1,8 +1,8 @@
 #include <iostream>
 #include <memory>
-#include "light.h"
-#include "object.h"
-#include "vector.h"
+#include "Light.h"
+#include "Sphere.h"
+#include "Vector.h"
 using namespace std;
 
 int main(int, char**) { cout << "hello ray tracing" << endl; }
