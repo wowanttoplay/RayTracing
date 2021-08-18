@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-19 00:08:04
- * @LastEditTime: 2021-08-19 00:39:14
+ * @LastEditTime: 2021-08-19 00:50:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /RayTracing/object.h
@@ -13,7 +13,7 @@ class Object {
  public:
   Object() = default;
 
-  virtual Object() = default;
+  virtual ~Object() = default;
 
   /**
    * @description: 判断光线与物体的碰撞，返回相关值
