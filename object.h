@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-19 00:08:04
- * @LastEditTime: 2021-08-19 01:41:13
+ * @LastEditTime: 2021-08-19 02:09:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /RayTracing/object.h
@@ -24,18 +24,19 @@ class Object {
   virtual bool Intersect(const Vector3f&, const Vector3f&, float&, uint32_t&, Vector2f&) const = 0;
 
   /**
-   * @description: 返回物体对应位置的法向量
-   * @param {const} Vector3f
+   * @description: 返回物体对应位置的表面属性
+   * @param {*}
    * @return {*}
    */
-  virtual Vector3f GetNormal(const Vector3f&) = 0;
+  virtual void GetSurfaceProperties(const Vector3f&, const Vector3f&, const uint32_t&,
+                                    const Vector2f&, Vector3f&, Vector2f&) const = 0;
 
   /**
    * @description: 返回对应纹理坐标的漫反射颜色
    * @param {const} Vector2f 纹理坐标
    * @return {*}
    */
-  virtual Vector3f GetDiffuseColor(const Vector2f&) { return diffuse_color; }
+  virtual Vector3f GetDiffuseColor(const Vector2f&) const { return diffuse_color; }
 
  public:
   float ior = 1.2;                         // 折射率

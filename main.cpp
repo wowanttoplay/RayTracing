@@ -2,6 +2,7 @@
 #include <memory>
 #include "Light.h"
 #include "Sphere.h"
+#include "Triangle.h"
 #include "Vector.h"
 using namespace std;
 

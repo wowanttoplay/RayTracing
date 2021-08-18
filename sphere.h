@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-19 00:16:34
- * @LastEditTime: 2021-08-19 01:40:51
+ * @LastEditTime: 2021-08-19 02:10:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Editude
  * @FilePath: /RayTracing/sphere.h
@@ -50,10 +50,14 @@ class Sphere : public Object {
     }
     return true;
   }
+
   /**
-   * @description:
-   * @param {const} Vector3f 球面某点
-   * @return {*} 返回球面法向量
+   * @description:返回球面点p的法线N
+   * @param {*}
+   * @return {*}
    */
-  virtual Vector3f GetNormal(const Vector3f& p) override { return normalize(p - center_); }
+  virtual void GetSurfaceProperties(const Vector3f& P, const Vector3f&, const uint32_t&,
+                                    const Vector2f&, Vector3f& N, Vector2f&) const override {
+    N = normalize(P - center_);
+  }
 };
