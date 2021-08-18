@@ -1,6 +1,7 @@
 #include <iostream>
 #include <memory>
-#include <vector>
+#include "object.h"
+#include "vector.h"
 using namespace std;
 
 int main(int, char**) { cout << "hello ray tracing" << endl; }
