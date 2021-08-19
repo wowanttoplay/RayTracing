@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-19 02:14:41
- * @LastEditTime: 2021-08-19 02:23:08
+ * @LastEditTime: 2021-08-19 13:23:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /RayTracing/Scene.h
@@ -36,7 +36,7 @@ class Scene {
  public:
   uint32_t width = 1960, height = 1080;
   double fov = 90;
-  Vector3f background _color = Vector3f(0.2f);
+  Vector3f background_color = Vector3f(0.2f);
   uint32_t max_depth = 5;
   float epsilon = 0.00001f;
 };
