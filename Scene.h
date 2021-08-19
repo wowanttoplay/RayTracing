@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-19 02:14:41
- * @LastEditTime: 2021-08-19 14:10:56
+ * @LastEditTime: 2021-08-19 15:10:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /RayTracing/Scene.h

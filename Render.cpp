@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-19 12:21:45
- * @LastEditTime: 2021-08-19 14:19:09
+ * @LastEditTime: 2021-08-19 15:20:23
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /RayTracing/Render.cc
@@ -90,7 +90,7 @@ Vector3f calculateBlinnPhongColor(const Vector3f &orig, const Vector3f &dir, con
   Vector3f lightAmt = 0, specularColor = 0;
   Vector3f shadowPointOrig =
       (dotProduct(dir, N) < 0) ? hitPoint + N * scene.epsilon : hitPoint - N * scene.epsilon;
- 
+
   for (auto &light : scene.GetLights()) {
     Vector3f lightDir = light->position_ - hitPoint;
     // square of the distance between hitPoint and the light
@@ -170,6 +170,7 @@ void Renderer::Render(const Scene &scene) {
       // Vector3f dir = Vector3f(x, y, -1);  // Don't forget to normalize this direction!
       // dir = normalize(dir);
       // framebuffer[m++] = castRay(eye_pos, dir, scene, 0);
+      // msaa
       Vector3f color;
       vector<float> t{0.25, 0.75};
       // vector<float> t{0.5};
@@ -185,7 +186,7 @@ void Renderer::Render(const Scene &scene) {
           color += castRay(eye_pos, dir, scene, 0);
         }
       }
-      framebuffer[m++] = color / t.size();
+      framebuffer[m++] = color / float(t.size());
     }
   }
 
@@ -195,10 +196,10 @@ void Renderer::Render(const Scene &scene) {
   for (auto i = 0; i < scene.height * scene.width; ++i) {
     static unsigned char color[3];
     /* code */
-    // float exposure = 1.0f;
-    // framebuffer[i].x = 1.0f - std::exp(-framebuffer[i].x * exposure);
-    // framebuffer[i].y = 1.0f - std::exp(-framebuffer[i].y * exposure);
-    // framebuffer[i].z = 1.0f - std::exp(-framebuffer[i].z * exposure);
+    float exposure = 1.0f;
+    framebuffer[i].x = 1.0f - std::exp(-framebuffer[i].x * exposure);
+    framebuffer[i].y = 1.0f - std::exp(-framebuffer[i].y * exposure);
+    framebuffer[i].z = 1.0f - std::exp(-framebuffer[i].z * exposure);
 
     color[0] = (unsigned char)(255 * clamp(0, 1, framebuffer[i].x));
     color[1] = (unsigned char)(255 * clamp(0, 1, framebuffer[i].y));
