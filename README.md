@@ -1,6 +1,13 @@
 # RayTracing
-主要搞光追
+主要搞光追,使用cpu计算
 
-## master
+Ray tracing
 
-最基础的光追
+![result](/Users/virgil/Documents/vscode/RayTracing/README.assets/result.png)
+
+
+
+Path tracing
+
+![path_tracing](/Users/virgil/Documents/vscode/RayTracing/README.assets/path_tracing.png)
+
