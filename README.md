@@ -3,11 +3,11 @@
 
 Ray tracing
 
-![result](/Users/virgil/Documents/vscode/RayTracing/README.assets/result.png)
+![image](https://github.com/wowanttoplay/RayTracing/blob/main/README.assets/result.png)
 
 
 
 Path tracing
 
-![path_tracing](/Users/virgil/Documents/vscode/RayTracing/README.assets/path_tracing.png)
+![image](https://github.com/wowanttoplay/RayTracing/blob/main/README.assets/path_tracing.png)
 
